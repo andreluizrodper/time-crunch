@@ -50,9 +50,6 @@
         </span>
       </Button>
     </div>
-    <Button variant="link" size="sm" as-child>
-      <router-link :to="{ name: 'register' }"> Criar Conta </router-link>
-    </Button>
   </div>
 </template>
 
@@ -92,13 +89,10 @@ export default {
       signInWithPopup(auth, provider).then(async (result) => {
         const doAccountExists = await accountExists({ id: result.user.uid });
         if (!doAccountExists) {
-          const data = {
-            name: result.user.displayName,
-            email: result.user.email,
-            owner: result.user.uid,
-          };
-          await createAccount({ data });
-          this.$router.push({ name: "dashboard" });
+          this.$store.commit("addToast", {
+            description:
+              "Esta conta não existe, vamos te enviar um convite assim que eles estiverem disponiveis",
+          });
         } else {
           await loginAccount({ id: result.user.uid });
           this.$router.push({ name: "dashboard" });
