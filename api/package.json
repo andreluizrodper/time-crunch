@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "npm i && pm2 start app.js",
     "dev": "node app.js",
-    "build": "vercel build"
+    "build": "node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "localtunnel": "^2.0.2",
     "node-schedule": "^2.1.1",
     "stripe": "^16.7.0",
+    "vercel": "^37.2.1",
     "vue-codemirror": "^6.1.1"
   }
 }
