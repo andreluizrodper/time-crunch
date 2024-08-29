@@ -6,8 +6,7 @@ const { router } = require("./email");
 const stripe = require("./stripe");
 const firebase = require("./firebase");
 const app = express();
-
-const port = 56210;
+const port = process.env.PORT || 56210;
 
 app.use(
   cors({

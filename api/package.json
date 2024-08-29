@@ -4,8 +4,7 @@
   "description": "api for near future lab",
   "main": "app.js",
   "scripts": {
-    "prod": "npm i && pm2 start app.js",
-    "dev": "node app.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
