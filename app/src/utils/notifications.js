@@ -40,7 +40,6 @@ const createNotification = async ({ data }) => {
 const markNotificationAsRead = async ({ id }) => {
   const notificationRef = doc(firestore, "notifications", id);
   const notification = await getDoc(notificationRef);
-  console.log(notification.data().read_by);
   setDoc(notificationRef, {
     ...notification.data(),
     read_by: [...notification.data().read_by, store.state.account.id],

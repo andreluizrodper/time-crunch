@@ -24,7 +24,6 @@ export default createStore({
       state.dialog = data;
     },
     setRedirect(state, data) {
-      console.log(data);
       state.redirect = data;
     },
     setIsExpanded(state, data) {

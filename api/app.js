@@ -7,7 +7,7 @@ const stripe = require("./stripe");
 const firebase = require("./firebase");
 const app = express();
 
-const port = 10200;
+const port = 56210;
 
 app.use(
   cors({
@@ -24,7 +24,6 @@ app.use("/ai", ai);
 app.use("/email", router);
 app.use("/firebase", firebase);
 app.use("/stripe", stripe);
-app.use("/send-campaign", sendCampaign);
 
 app.get("/", (res) => {
   res.send("This is it.");

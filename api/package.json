@@ -4,8 +4,9 @@
   "description": "api for near future lab",
   "main": "app.js",
   "scripts": {
-    "prod": "npm i && pm2 start timecrunch.js",
-    "dev": "nodemon timecrunch.js"
+    "prod": "npm i && pm2 start app.js",
+    "dev": "node app.js",
+    "build": "vercel build"
   },
   "author": "",
   "license": "ISC",
